@@ -10,9 +10,17 @@
         }
         header{
             background-color: brown;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
         nav{
             background-color: aquamarine;
+            position: sticky;
+            top: 0;
+            z-index: 2;
+            display: flex;
+            justify-content: center;
         }
         #intro{
             background-color: lightpink;
@@ -66,6 +74,9 @@
             margin: 10px;
             width: 400px;
             box-shadow: 6px 0px 21px --3px #333333;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
         button{
             background-color: red ;
@@ -75,6 +86,10 @@
             padding: 5px;
             border-radius: 5px;
             border: none;
+            position: fixed;
+            right: 50px;
+            bottom: 40px;
+            
         }
         ul{
             list-style-type: none;
@@ -117,6 +132,9 @@
         }
         footer{
         padding: 20px;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
         }
         #best-sellers h2{
             padding: 20px;
@@ -124,13 +142,36 @@
         ol li{
             margin-bottom: 20px;
         }
+        #book-reviews p,
+        #book-reviews h3{
+            position: relative;
+            left: 40%;
+            width: 400px;
+        }
+        #videos div{
+            display: flex;
+            justify-content: space-around;
+        }
+        #teachers{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        nav ul{
+            display: flex;
+            justify-content: space-between;
+        }
+
         
     </style>
 </head>
 <body> 
+    <div class="grid-container">
     <!-- heading -->
+     <header style="background-color: cadetblue;">
      <h1>iftys book CLUB</h1>
-     <img src="images/book.jpg" alt="List of books" width="300">
+     <img src="images/book.jpg" alt="List of books" width="300"> 
+     </header>
      <!-- nav bar -->
       <nav>
         <ul>
@@ -150,33 +191,64 @@
       </nav>
 
      <!-- intro -->
-      <div>  
+      <div id="intro">  
       <h2>Welcome to Ifty's book club!</h2>
-      <p>The Ifty's book club is an online book club for book readers in glowfield international school</p>
+      <p>The Ifty's book club is an online book club for book readers in glowfield international school</p> 
+      </div>
+
+      <div id="main-section">
       <!-- content1 -->
+       <div class="main-section-content">
        <h2>Meet our teachers!</h2>
-       <img src="images/teacher 1.jpg" alt="Mrs Victoria" width="100">
-       <h3>Mrs victoria</h3>
-       <p>Mrs victoria is a grade 4 teacher,shes lovely and funny but serious and calm whern its time!</p>
-       <h2>Meet our teachers!</h2>
-       <img src="images/teacher2.jpg" alt="Mrs Obi" width="50">
-       <h3>Mrs Obiajulu</h3>
-       <p>Mrs Obiajulu is a grade 4 teacher,shes lovely awesome but serious and pleasant to talk with!</p>
-       <h2>Meet our teachers!</h2>
-       <img src="images/teacher3.jpg" alt="Mrs Sarah" width="100">
-       <h3>Mrs Sarah</h3>
-       <p>Mrs Sarah is a grade 1 teacher,shes lovely and caring and one of our best at learning by teahing!</p>
+       <div id="teachers">
+        <div id="teacher-info">
+            <div>
+                 <img src="images/teacher 1.jpg" alt="Mrs Victoria" width="100">
+            </div>
+            <div>
+                 <h3>Mrs victoria</h3>
+                  <p>Mrs victoria is a grade 4 teacher,shes lovely and funny but serious and calm whern its time!</p> 
+            </div>
+        </div>
+            <div class="teacher-info">
+                <div>
+                     <img src="images/teacher2.jpg" alt="Mrs Obi" width="50">
+                </div>
+                <div>
+
+                      <h3>Mrs Obiajulu</h3>
+                     <p>Mrs Obiajulu is a grade 4 teacher,shes lovely awesome but serious and pleasant to talk with!</p>
+                 </div>
+            </div>
+            <div class="teacher-info">
+                <div>
+                    <img src="images/teacher3.jpg" alt="Mrs Sarah" width="100">
+                </div>
+                <div>
+                     <h3>Mrs Sarah</h3>
+                     <p>Mrs Sarah is a grade 1 teacher,shes lovely and caring and one of our best at learning by teahing!</p>
+                </div>
+            </div>
+       </div>
+       </div>
        <!-- content2 -->
+        <div id="book-reviews" class="main-section-content">
         <h2>book review</h2>
         <h3>The polite adventures</h3>
        <p><strong>Korede: </strong><q>I love reading this book i learnt so much from it!</q></p>
        <p><strong>Amelia: </strong><q>I love reading this book its helps me in my daily life!</q></p>
+        </div>
         <!-- content3 -->
+         <div id="videos" class="main-section-content">
          <h2>Related videos</h2>
+         <div>
          <video width="400" height="220" controls autoplay>
             <source src="images/" type="video/mp4"> 
          </video>
          <iframe src="https://www.youtube.com/embed/wcWLKRXgjsw" width="400" height="220" title="youtube video player" frameborder="0"></iframe>
+         </div>
+         </div>
+         <div class="main-section-content">
          <h2>Opening timings</h2>
          <table>
             <tr>
@@ -209,12 +281,18 @@
                 <td>10am - 1pm</td>
             </tr>
          </table>
+         </div>
+      </div>
        <!-- best seller section -->
+        <div id="bestsellers">
         <h2>best selllers</h2> 
-        <b>Stand by me</b> By <em>sd robert</em><br>
-        <b>Sophia</b> By <em> Ruby James</em><br>
-        <b>Matilda</b> By <em> Road Dhahl</em><br>
-        <b>Grandmas treasure</b> by <em>Kacy Dimaro</em><br>
+        <ol>
+       <li> <b>Stand by me</b> By <em>sd robert</em><br> </li>
+      <li> <b>Sophia</b> By <em> Ruby James</em><br> </li>
+       <li> <b>Matilda</b> By <em> Road Dhahl</em><br> </li>
+      <li>  <b>Grandmas treasure</b> by <em>Kacy Dimaro</em><br> </li>
+        </ol>
+        </div>
 
      <!-- contact info -->
       <footer>
@@ -225,6 +303,7 @@
       </footer>
       <button>Enquiry</button>
       </div>
+    </div>
      
 </body>
 </html>
